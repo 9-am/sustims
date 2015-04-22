@@ -1,0 +1,16 @@
+// @import 'variables/susy';
+$JF-Flat: 'JF Flat Regular';
+$fontfamily:    $JF-Flat;
+//      ===========
+//      FONT WEIGHT     <]]]
+$thin:    200;
+$normal:  400;
+$bold:    600;
+$heavy:   200;
+// susy configrations
+
+$susy: (
+    global-box-sizing: border-box,
+    use-custom: (rem: true)
+);
+@include border-box-sizing;

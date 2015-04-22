@@ -1,0 +1,69 @@
+@mixin header-view(){
+  .header-view{
+    span{
+      @include span(2 of 12);
+      font-size: modular-scale(8);
+      text-align:        CENTER;
+      .logo{
+        color:             RED;
+      }
+    }
+    [class^="hand-icon-"]{
+      @include span(2 of 12 last);
+      font-size: modular-scale(5);
+    }
+  }
+}
+//   // for test
+//   body{background-color: rgba(6, 5, 1, 0.88);
+//     @include container;
+//   }
+//   .header-view{
+//     @include span(10 of 10);
+//     margin-top: 0;
+//     /*mmmmmmmmmmmmmmmmmmmmmmmmmmmmmm*/
+//     // display:  inline-block;
+//     // position: fixed;
+//     // top:      0;
+//     // left:     0;
+//     // width:    100%;
+//     // height:   150px;
+//     background-color:   white;
+//     // /*groove ridge inset outset solid*/
+//     @include border-style(null null groove);
+//     @include border-width(0 0 2em 0);
+//     @include border-color(null null rgba(33, 39, 0, 0.92) null);
+//     // $container-style: magic;
+//
+//     .logo{
+//       @include span(2 of 10);
+//       background-color: #df9a2b;
+//       text-decoration:  CENTER;
+//       align:  CENTER;
+//       text-alignment:  CENTER;
+//       // float:  left;
+//       color: green;
+//       font-size: modular-scale(7);
+//     }
+//   .title{
+//     @include span(5 of 10);
+//
+//     background-color: #d6c801;
+//     @include clearfix;
+//       // Use ligatures if the typeface and font file include them
+//       @include font-feature-settings("liga");
+//       // Use proportional numbers, but not automatic kerning
+//       @include font-feature-settings("pnum", "kern" false);
+//       font-family:  $JF-Flat;
+//       // @include padding(1em null  null 5em);
+//       // text-decoration:  center;
+//       font-size: modular-scale(2);
+//     }
+//     .som{
+//       @include span(2 of 10 last);
+//       background-color: #6acc4c;
+//     }
+//     // .title:after{clear: both;}
+//   }
+// }
+// // ============  mixins ================

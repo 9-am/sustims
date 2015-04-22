@@ -1,0 +1,18 @@
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.header-view span {
+  width: 15.25424%;
+  float: left;
+  margin-right: 1.69492%;
+  font-size: 9.96876em;
+  text-align: CENTER; }
+  .header-view span .logo {
+    color: RED; }
+.header-view [class^="hand-icon-"] {
+  width: 15.25424%;
+  float: right;
+  margin-right: 0;
+  font-size: 4.20873em; }
