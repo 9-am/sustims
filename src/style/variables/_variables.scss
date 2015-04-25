@@ -7,10 +7,44 @@ $thin:    200;
 $normal:  400;
 $bold:    600;
 $heavy:   200;
+// [[[[ DIMENSIONS ]]]]
+$base-height:     2.8em;
+$base-height-ratio-error:     $base-height - .56em;
+// colors
+$base-color:      rgba(33, 237, 60, .89);
+$hot-color:       #ff0019;
+$font-color:      lighten($base-color, 56);
+// border-radius
+$border-radius:   19px;
 // susy configrations
-
+// $susy: (
+//     global-box-sizing: border-box,
+//     use-custom: (rem: true)
+// );
 $susy: (
-    global-box-sizing: border-box,
-    use-custom: (rem: true)
+  flow: ltr,
+  math: fluid,
+  output: float,
+  gutter-position: after,
+  container: auto,
+  container-position: center,
+  columns: 4,
+  gutters: .25,
+  column-width: false,
+  global-box-sizing: content-box,
+  last-flow: to,
+  debug: (
+    image: hide,
+    color: rgba(#66f, .25),
+    output: background,
+    toggle: top right,
+  ),
+  use-custom: (
+    background-image: true,
+    background-options: false,
+    box-sizing: true,
+    clearfix: true,
+    rem: true,
+  )
 );
-@include border-box-sizing;
+// @include global-box-sizing;

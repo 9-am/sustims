@@ -9,7 +9,6 @@ insecure
 iron:router
 accounts-password
 zimme:iron-router-auth
-martino:iron-router-i18n
 multiply:iron-router-progress
 aldeed:collection2
 dburles:collection-helpers
@@ -17,7 +16,6 @@ aldeed:autoform
 templates:forms
 #houston:admin
 #yogiben:admin
-tap:i18n
 ryw:blog
 sacha:spin
 momentjs:moment
@@ -26,3 +24,4 @@ coffeescript
 jquery
 mike:mocha
 velocity:html-reporter@0.3.0-rc.3
+d3

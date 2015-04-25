@@ -1,3 +1,14 @@
+@import "themes/terminal";
+@import "themes/light";
+@import "themes/awesome";
 @mixin default-theme(){
-  @include header-view;
-}
+  $base-color:      rgba(222, 189, 159, .89);
+  html, body{
+    width:      100%;
+    height:     100%;
+    overflow:   hidden;
+    @include    linear-gradient(50deg,darken($base-color, 69)  0%, darken($base-color, 44) 50%,  darken($base-color, 44) 51%, darken($base-color, 69) 100%);
+  }
+  // @include header-view;
+  @include awesome;
+}//default-theme

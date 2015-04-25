@@ -50,6 +50,8 @@ gulp.task 'coffee-test', ->
   config.init()
   gulp.src config.srcCoffeeTest
   .pipe coffee({bare:true})
+  .on      'error', (err) ->
+    console.error '#ERROR', err
   .pipe gulp.dest config.dest
 # ---------------------------- WATCH  ------------------------------------------
 gulp.task 'watch', ->

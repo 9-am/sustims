@@ -7,13 +7,11 @@
 // { core partials }
 @import 'variables/variables';
 @import 'mixins/mixins';
-@import 'base';
-@import 'layout';
 // -----------------------------------------------
 // default theme import
 @import 'themes';
 // -----------------------------------------------
 //  [[[> Modules <]]]
-@import 'modules/header';
+// @import 'modules/header';
 // -----------------------------------------------
 @include default-theme();
