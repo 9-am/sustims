@@ -1,0 +1,9 @@
+template(name='awesome')
+  section(class='awesome')
+    article(class='content')
+      |{{> yield}}
+      |{{> verticalbar}}
+    nav(class='navbar')
+      include ../../_mixin.jade
+      +icon('ti-home', 'ti-dashboard', 'ti-pie-chart', 'ti-layout-grid2-alt', 'ti-book', 'ti-settings', 'ti-github')
+      

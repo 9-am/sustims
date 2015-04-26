@@ -1,0 +1,33 @@
+
+@mixin  verticalbar(){
+
+  .verticalbar{
+    // @include    span(1 of 10 last);
+    height:     100%;
+    // margin-top: 6%;
+    // margin-bottom: 2%;
+    @include span-columns(2);
+    @include omega;
+    background-color:  GREEN;
+    // @include shift(11);
+    @include    prefixer(border-radius, 0 $border-radius 0 0, webkit ms spec);
+    opacity:    .1;
+    color:      lighten($base-color, 59);
+    @include      hide-text();
+    &:hover{opacity:  .5;text-indent: 0%;}
+    // @include container;
+    span{
+      // ICON SIZE
+      font-size:    259%;
+      margin-top:   30%;
+      @include      span-columns(1 of 1);
+      @include fill-parent();
+      $column: modular-scale(3, 1em, $golden) !default;
+      @include      pad();
+      text-align:   center;
+      // font-size:    modular-scale(3);
+      // padding-top:  50%;
+      &:hover{color:  $base-color;cursor: pointer;}
+    }//span
+  }//verticalbar
+}

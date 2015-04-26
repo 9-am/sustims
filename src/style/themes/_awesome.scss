@@ -1,0 +1,53 @@
+@import "awesome/base";
+@import "awesome/layout";
+@import "awesome/modules/verticalbar";
+@import "awesome/modules/addnew";
+@mixin  awesome(){
+  .awesome{
+    height:     89%;
+    margin-top: 2%;
+    @include outer-container;
+    @include    prefixer(border-radius, $border-radius, webkit ms spec);
+    @include    linear-gradient(50deg,darken($base-color, 69)  0%, darken($base-color, 44) 50%,  darken($base-color, 44) 51%, darken($base-color, 69) 100%);
+    .content{
+      height:     86%;
+      @include    prefixer(border-radius, $border-radius $border-radius 0 0, webkit ms spec);
+      @include      verticalbar;
+      @include      addnew;
+    }//content
+    .navbar{
+      height:     14%;
+      @include    prefixer(border-radius, 0 0 $border-radius $border-radius, webkit ms spec);
+      // font-size:  modular-scale(4);
+      @include    linear-gradient(50deg, #21ed3c 0%, #0eff7e 50%,  #0eff7e 51%, #1bc09f 100%);
+      color:      lighten($base-color, 19);
+      opacity:    .7;
+      &:hover{
+        cursor:   pointer;
+        opacity:  .89;
+
+      }//navbar:hover
+      span{
+        @include span-columns(2 of 14);
+        @include omega(7n);
+        font-size:    259%;
+        margin-top:   2%;
+        text-align: center;
+        text-justify: center;
+        // padding-top:  1%;
+        // padding-bottom: 1%;
+        color:      lighten($base-color, 89);
+        // -shadow(darken($base-color, 69) 0 0 20px);
+        text-shadow:    darken($base-color, 69) 0 0 20px;
+      }//icons
+      .hand-icon-monitor82{
+      }
+      .ti-layout-grid2-alt{
+        color:      $hot-color;
+        &:hover{
+        zoom:     1.1;
+        }//start:hover
+      }
+    }//navbar
+  }//awesome
+}//awesome-mixin

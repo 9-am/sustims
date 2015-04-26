@@ -1,0 +1,8 @@
+@import "light/base";
+@import "light/layout";
+
+@mixin light(){
+  body{
+    background-color: #f4f5a4;
+  }
+}

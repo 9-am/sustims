@@ -1,0 +1,57 @@
+@mixin addnew(){
+  .addnew{
+    color:  $font-color;
+    height:     100%;
+    @include span-columns(10);
+    padding-top:        5%;
+    label{
+      // @include      span(2 of 10 at 2);
+      @include      span-columns(2 of 10);
+      @include      shift(1 of 10);
+      @include      pad();
+      // @include      linear-gradient(50deg, #21ed3c 0%, #2a573d 50%,  #2a573d 51%, #1bc09f 100%);
+      // @include      prefixer(border-radius, $border-radius 0 0 $border-radius, webkit ms spec);
+      text-align:   center;
+      opacity:      .89;
+    }//label
+    select{
+      @include      span-columns(5 of 10);
+      @include      pad();
+      color:              $font-color;
+      background-color:   darken($base-color, 59);
+      option{
+      }//option
+    }//select
+    #{$all-text-inputs}{
+      @include            span-columns(5 of 10);
+      @include            pad();
+      color:              datken($font-color, 89);
+      background-color:   datken($base-color, 39);
+    }
+    input[type='submit']{
+      @include            linear-gradient(50deg, #21ed3c 0%, #2a573d 50%,  #2a573d 51%, #1bc09f 100%);
+      @include            prefixer(border-radius, $border-radius $border-radius $border-radius $border-radius, webkit ms spec);
+      color:              $font-color;
+      @include            span-columns(2 of 10);
+      @include            shift(5);
+      @include            pad();
+      margin-top:         5%;
+      outline:            none;
+      text-align:         center;
+    }
+    .device-info{
+      @include      shift(1);
+      @include         span-columns(8 of 10);
+      margin-top:   .5%;
+      #{$all-text-inputs}{
+        @include         span-columns(2 of 8);
+      }//text inputs
+      label{
+        @include         span-columns(1 of 8);
+      }//labels
+      input[type='submit']{
+        margin-top:   .5%;
+      }//submit
+    }//.device-info
+  }//addnew
+}

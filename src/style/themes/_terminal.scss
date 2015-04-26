@@ -1,0 +1,8 @@
+@import "terminal/base";
+@import "terminal/layout";
+
+@mixin  terminal(){
+  body{
+    background-color: #020202;
+  }
+}

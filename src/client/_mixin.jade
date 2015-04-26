@@ -1,0 +1,4 @@
+mixin icon(name)
+  - var args  = Array.prototype.slice.call(arguments)
+  for icon in args
+    span(class= icon)
