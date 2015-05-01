@@ -25,3 +25,4 @@ jquery
 mike:mocha
 velocity:html-reporter@0.3.0-rc.3
 d3
+autopublish

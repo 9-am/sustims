@@ -1,101 +1,107 @@
 template(name='addnew')
-  .addnew
-    label(for='ops-type')
-      | ADD NEW : 
-    select(id='ops-type', name='ops-type', placeholder='please select one')
-      |{{#each options}}
-      option(value='{{value}}')
-        | add new {{value}} 
-      |{{/each}}
-    |{{#if showCollegeForm}} 
-    label(for='college-name') 
-      | COLLEGE : 
-    input(type='text', name='college-name', placeholder='college name' autofocus)
-      | 
-    input(type='submit', name='submit')
-    |{{else}}
-    |{{#if showSchoolForm}}
-    label(for='ops-type-colleges')
-      | COLLEGE : 
-    select(id='ops-type-colleges', name='ops-type-colleges', placeholder='please select one')
-      |{{#each options}}
-      option(value='{{value}}')
-        |{{value}} 
-      |{{/each}}
-    label(for='school-name') 
-      | SCHOOL : 
-    input(type='text', name='school-name', placeholder='school name' autofocus)
-      | 
-    input(type='submit', name='submit' )
-    |{{else}}
-    |{{#if showOfficeForm}}
-    label(for='college-selection-for-office')
-      | COLLEGE : 
-    select(id='college-selection-for-office', name='college-selection-for-office', placeholder='please select one')
-      |{{#each options}}
-      option(value='{{value}}')
-        |{{value}} 
-      |{{/each}}
-    label(for='school-selection-for-office')
-      | SCHOOL : 
-    select(id='school-selection-for-office', name='school-selection-for-office', placeholder='please select one')
-      |{{#each options}}
-      option(value='{{value}}')
-        |{{value}} 
-      |{{/each}}
-    label(for='office-name') 
-      | OFFICE : 
-    input(type='text', name='office-name', placeholder='office name' autofocus)
-      | 
-    input(type='submit', name='submit' )
-    |{{else}}
-    label(for='college-selection-for-device')
-      | COLLEGE : 
-    select(id='college-selection-for-device', name='college-selection-for-device', placeholder='please select one')
-      |{{#each options}}
-      option(value='{{value}}')
-        |{{value}} 
-      |{{/each}}
-    label(for='school-selection-for-device')
-      | SCHOOL : 
-    select(id='school-selection-for-device', name='school-selection-for-device', placeholder='please select one')
-      |{{#each options}}
-      option(value='{{value}}')
-        |{{value}} 
-      |{{/each}}
-    label(for='office-selection-for-device')
-      | OFFICE : 
-    select(id='office-selection-for-device', name='office-selection-for-device', placeholder='please select one')
-      |{{#each options}}
-      option(value='{{value}}')
-        |{{value}} 
-      |{{/each}}
-    .device-info
-      label(for='device-info-model')
-        | model
-      input(type='text', name='device-info-model', placeholder='Model')
-        | 
-      label(for='device-info-cpu-speed')
-        | CPU
-      input(type='text', name='device-info-cpu-speed', placeholder='CPU SPEED')
-        | 
-      label(for='device-info-hdd')
-        | H.D.D
-      input(type='text', name='device-info-hdd', placeholder='H.D.D Capacity')
-        | 
-      label(for='device-info-ram')
-        | RAM
-      input(type='text', name='device-info-ram', placeholder='Memory Speed')
-        | 
-      label(for='device-info-screen-type')
-        | SCREEN
-      input(type='text', name='device-info-screen-type', placeholder='Screen Type')
-        | 
-      label(for='device-info-printer')
-        | PRINTER
-      input(type='text', name='device-info-printer', placeholder='Printer')
-        | 
-      input(type='submit', name='submit' )
-    |{{/if}}
-    |{{/if}}
-    |{{/if}}
+    .addnew
+      label(for='opsType')
+        | ADD NEW : 
+      select(id='opsType', name='opsType', placeholder='please select one')
+        |{{#each options}}
+        option(value='{{value}}')
+          | add new {{value}} 
+        |{{/each}}
+      |{{#if showCollegeForm}} 
+      form(id='addCollegeForm')
+        label(for='collegeName') 
+          | COLLEGE : 
+        input(type='text', name='collegeName', placeholder='college name' autofocus)
+          | 
+        input(type='submit', value='add college')
+      |{{else}}
+      |{{#if showSchoolForm}}
+      form(id='addSchoolForm')
+        label(for='opsTypeColleges')
+          | COLLEGE : 
+        select(id='college-selection-for-school', name='opsTypeColleges', placeholder='please select one')
+          |{{#each colleges}}
+          option(value='{{collegeName}}')
+            |{{collegeName}} 
+          |{{/each}}
+        label(for='schoolName') 
+          | SCHOOL : 
+        input(type='text', name='schoolName', placeholder='school name' autofocus)
+          | 
+        input(type='submit', name='addSchool' value='add school' )
+      |{{else}}
+      |{{#if showOfficeForm}}
+      form(id='addOfficeForm')
+        label(for='collegeSelectionForOffice')
+          | COLLEGE : 
+        select(id='college-selection-for-office', name='collegeSelectionForOffice', placeholder='please select one')
+          |{{#each colleges}}
+          option(value='{{collegeName}}')
+            |{{collegeName}} 
+          |{{/each}}
+        
+        label(for='schoolSelectionForOffice')
+          | SCHOOL : 
+        select(id='school-selection-for-office', name='schoolSelectionForOffice', placeholder='please select one')
+          |{{#each schools}}
+          option(value='{{schoolName}}')
+            |{{schoolName}} 
+          |{{/each}}
+        
+        label(for='officeName') 
+          | OFFICE : 
+        input(type='text', name='officeName', placeholder='office name' autofocus)
+          | 
+        input(type='submit', name='addOffice' value='add office')
+      |{{else}}
+      form(id='addDeviceForm')
+        label(for='collegeSelectionForDevice')
+          | COLLEGE : 
+        select(id='college-selection-for-device', name='collegeSelectionForDevice', placeholder='please select one')
+          |{{#each options}}
+          option(value='{{value}}')
+            |{{value}} 
+          |{{/each}}
+        label(for='schoolSelectionForDevice')
+          | SCHOOL : 
+        select(id='school-selection-for-device', name='schoolSelectionForDevice', placeholder='please select one')
+          |{{#each options}}
+          option(value='{{value}}')
+            |{{value}} 
+          |{{/each}}
+        label(for='officeSelectionForDevice')
+          | OFFICE : 
+        select(id='office-selection-for-device', name='officeSelectionForDevice', placeholder='please select one')
+          |{{#each options}}
+          option(value='{{value}}')
+            |{{value}} 
+          |{{/each}}
+        .device-info
+          label(for='deviceInfoModel')
+            | model
+          input(type='text', name='deviceInfoModel', placeholder='Model')
+            | 
+          label(for='deviceInfoCpuSpeed')
+            | CPU
+          input(type='text', name='deviceInfoCpuSpeed', placeholder='CPU SPEED')
+            | 
+          label(for='deviceInfoHdd')
+            | H.D.D
+          input(type='text', name='deviceInfoHdd', placeholder='H.D.D Capacity')
+            | 
+          label(for='deviceInfoRam')
+            | RAM
+          input(type='text', name='deviceInfoRam', placeholder='Memory Speed')
+            | 
+          label(for='deviceInfoScreenType')
+            | SCREEN
+          input(type='text', name='deviceInfoScreenType', placeholder='Screen Type')
+            | 
+          label(for='deviceInfoPrinter')
+            | PRINTER
+          input(type='text', name='deviceInfoPrinter', placeholder='Printer')
+            | 
+          input(type='submit', name='addDevice' value='add device')
+      |{{/if}}
+      |{{/if}}
+      |{{/if}}
